@@ -69,12 +69,12 @@ public class Chap17tipCalculator extends JFrame {
                         tip = input * .15;
                         total = input + tip;
                     } // end if condition
-                    outputBox.setText(Double.toString(input));
+                    outputBox.setText(Double.toString(total));
                     if (e.getSource() == button3) {
                         tip = input * .2;
                         total = input + tip;
                     } // end if condition
-                    outputBox.setText(Double.toString(input));
+                    outputBox.setText(Double.toString(total));
                 } catch (NumberFormatException nfe) {
                     input = -1;
                 } // end try/catch   
