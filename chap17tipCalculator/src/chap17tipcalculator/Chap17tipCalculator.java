@@ -64,6 +64,16 @@ public class Chap17tipCalculator extends JFrame {
                         total = input + tip;
                     } // end if condition
                     outputBox.setText(Double.toString(input));
+                    if (e.getSource() == mealCostBox) {
+                        tip = input * .1;
+                        total = input + tip;
+                    } // end if condition
+                    outputBox.setText(Double.toString(input));
+                    if (e.getSource() == mealCostBox) {
+                        tip = input * .1;
+                        total = input + tip;
+                    } // end if condition
+                    outputBox.setText(Double.toString(input));
                 } catch (NumberFormatException nfe) {
                     input = -1;
                 } // end try/catch   
