@@ -38,6 +38,9 @@ public class Chap17tipCalculator extends JFrame {
         mealCostBox = new JTextField(10);
         outputBox = new JTextField(5);
         outputBox.setEditable(false);
+        button1.setBackground(Color.YELLOW);
+        button2.setBackground(Color.MAGENTA);
+        button3.setBackground(Color.CYAN);
         add(mealCostPrompt);
         add(mealCostBox);
         add(outputBox);
@@ -61,16 +64,32 @@ public class Chap17tipCalculator extends JFrame {
                 try {
                     input = Double.parseDouble(mealCostBox.getText());
                     if (e.getSource() == button1) {
+                        Container contentPane = getContentPane();
+                        if (e.getSource() == button1) {
+                            contentPane.setBackground(Color.LIGHT_GRAY);
+                        } // end if condition
                         tip = input * .1;
                         total = input + tip;
                     } // end if condition
                     outputBox.setText(Double.toString(total));
                     if (e.getSource() == button2) {
+                        
+                        Container contentPane = getContentPane();
+                        if (e.getSource() == button2) {
+                            contentPane.setBackground(Color.PINK);
+                        } // end if condition
+                        
                         tip = input * .15;
                         total = input + tip;
                     } // end if condition
                     outputBox.setText(Double.toString(total));
                     if (e.getSource() == button3) {
+                        
+                        Container contentPane = getContentPane();
+                        if (e.getSource() == button3) {
+                            contentPane.setBackground(Color.ORANGE);
+                        } // end if condition
+                        
                         tip = input * .2;
                         total = input + tip;
                     } // end if condition
