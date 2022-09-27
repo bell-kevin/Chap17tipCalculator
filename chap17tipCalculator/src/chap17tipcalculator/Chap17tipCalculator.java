@@ -53,17 +53,20 @@ public class Chap17tipCalculator extends JFrame {
     private class Listener implements ActionListener {//InnerClass eventHandling
 
         public void actionPerformed(ActionEvent e) {
-            double input; // numeric value for user-entered input
-            double output; // tip amount
-            try {
-                input = Double.parseDouble(mealCostBox.getText());
-            } catch (NumberFormatException nfe) {
-                input = -1;
-            }
+            double input, output, total = 0, tip; // tip amount
             if (e.getSource() == mealCostBox) {
                 JOptionPane.showMessageDialog(null, "Click one of the buttons");
             } else {
-                outputBox.setText(Double.toString(input));
+                try {
+                    input = Double.parseDouble(mealCostBox.getText());
+                    if (e.getSource() == mealCostBox) {
+                        tip = input * .1;
+                        total = input + tip;
+                    } // end if condition
+                    outputBox.setText(Double.toString(input));
+                } catch (NumberFormatException nfe) {
+                    input = -1;
+                } // end try/catch   
             } // end if/else condition
         } // end actionPerformed
     } // end Listener class
