@@ -34,8 +34,8 @@ public class Chap17tipCalculator extends JFrame {
         JButton button2 = new JButton("15% tip");
         JButton button3 = new JButton("20% tip");
         Listener listener = new Listener();
-        mealCostBox = new JTextField(15);
-        outputBox = new JTextField(10);
+        mealCostBox = new JTextField(10);
+        outputBox = new JTextField(5);
         outputBox.setEditable(false);
         add(mealCostPrompt);
         add(mealCostBox);
@@ -53,12 +53,23 @@ public class Chap17tipCalculator extends JFrame {
     private class Listener implements ActionListener {//InnerClass eventHandling
 
         public void actionPerformed(ActionEvent e) {
-
+            double input; // numeric value for user-entered input
+            double output; // tip amount
+            try {
+                input = Double.parseDouble(mealCostBox.getText());
+            } catch (NumberFormatException nfe) {
+                input = -1;
+            }
+            if (e.getSource() == mealCostBox) {
+                JOptionPane.showMessageDialog(null, "Click one of the buttons");
+            } else {
+                outputBox.setText(Double.toString(input));
+            } // end if/else condition
         } // end actionPerformed
     } // end Listener class
 //******************************************************************************
 
     public static void main(String[] args) {
-        new tipCalculator();
+        new Chap17tipCalculator();
     } // end main method
 } // end Chap17tipCalculator class
