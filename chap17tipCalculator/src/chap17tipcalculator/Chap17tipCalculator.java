@@ -45,6 +45,8 @@ public class Chap17tipCalculator extends JFrame {
         add(button3);
         mealCostBox.addActionListener(listener);
         button1.addActionListener(listener);
+        button2.addActionListener(listener);
+        button3.addActionListener(listener);
     } // end createContents method
 //******************************************************************************
 
