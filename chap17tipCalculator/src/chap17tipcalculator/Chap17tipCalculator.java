@@ -39,7 +39,13 @@ public class Chap17tipCalculator extends JFrame {
         mealCostBox.addActionListener(new Listener());
     } // end createContents method
 //******************************************************************************
-
+    // Inner class for event handling
+    private class Listener implements ActionListener{
+        public void actionPerformed(ActionEvent e){
+            
+        } // end actionPerformed
+    } // end Listener class
+//******************************************************************************
     public static void main(String[] args) {
         new tipCalculator();
     } // end main method
