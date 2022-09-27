@@ -16,6 +16,9 @@ public class Chap17tipCalculator extends JFrame {
     private static final int HEIGHT = 100;
     private JTextField mealCostBox; // holds user's meal cost
     private JTextField outputBox; // displays tip amount calculation
+    private JButton button1 = new JButton("10% tip");
+    private JButton button2 = new JButton("15% tip");
+    private JButton button3 = new JButton("20% tip");
 //******************************************************************************
 
     public Chap17tipCalculator() {
@@ -30,9 +33,7 @@ public class Chap17tipCalculator extends JFrame {
 
     private void createContents() {  // Create components and add them to window
         JLabel mealCostPrompt = new JLabel("How much did the meal cost?");
-        JButton button1 = new JButton("10% tip");
-        JButton button2 = new JButton("15% tip");
-        JButton button3 = new JButton("20% tip");
+
         Listener listener = new Listener();
         mealCostBox = new JTextField(10);
         outputBox = new JTextField(5);
@@ -59,17 +60,17 @@ public class Chap17tipCalculator extends JFrame {
             } else {
                 try {
                     input = Double.parseDouble(mealCostBox.getText());
-                    if (e.getSource() == mealCostBox) {
+                    if (e.getSource() == button1) {
                         tip = input * .1;
                         total = input + tip;
                     } // end if condition
-                    outputBox.setText(Double.toString(input));
-                    if (e.getSource() == mealCostBox) {
+                    outputBox.setText(Double.toString(total));
+                    if (e.getSource() == button2) {
                         tip = input * .15;
                         total = input + tip;
                     } // end if condition
                     outputBox.setText(Double.toString(input));
-                    if (e.getSource() == mealCostBox) {
+                    if (e.getSource() == button3) {
                         tip = input * .2;
                         total = input + tip;
                     } // end if condition
