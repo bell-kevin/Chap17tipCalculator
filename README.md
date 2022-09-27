@@ -29,7 +29,15 @@ Take 6 screenshots -- 2 different meal prices, with each tip rate for each meal.
 
 Submission: the specified screenshots and the root folder for the project
 
+ ![1](https://github.com/bell-kevin/Chap17tipCalculator/blob/main/1.PNG)
  
+ ![2](https://github.com/bell-kevin/Chap17tipCalculator/blob/main/2.PNG)
+ 
+ ![3](https://github.com/bell-kevin/Chap17tipCalculator/blob/main/3.PNG)
+
+ ![4](https://github.com/bell-kevin/Chap17tipCalculator/blob/main/4.PNG)
+ 
+ ![5](https://github.com/bell-kevin/Chap17tipCalculator/blob/main/5.PNG)
 
 Pay careful attention to the rubric for this assignment.
 
