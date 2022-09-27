@@ -73,23 +73,19 @@ public class Chap17tipCalculator extends JFrame {
                     } // end if condition
                     outputBox.setText(Double.toString(total));
                     if (e.getSource() == button2) {
-                        
                         Container contentPane = getContentPane();
                         if (e.getSource() == button2) {
                             contentPane.setBackground(Color.PINK);
                         } // end if condition
-                        
                         tip = input * .15;
                         total = input + tip;
                     } // end if condition
                     outputBox.setText(Double.toString(total));
                     if (e.getSource() == button3) {
-                        
                         Container contentPane = getContentPane();
                         if (e.getSource() == button3) {
                             contentPane.setBackground(Color.ORANGE);
                         } // end if condition
-                        
                         tip = input * .2;
                         total = input + tip;
                     } // end if condition
