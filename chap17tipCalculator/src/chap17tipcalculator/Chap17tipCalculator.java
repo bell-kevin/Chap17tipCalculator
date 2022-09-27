@@ -33,6 +33,7 @@ public class Chap17tipCalculator extends JFrame {
         JButton button1 = new JButton("10% tip");
         JButton button2 = new JButton("15% tip");
         JButton button3 = new JButton("20% tip");
+        Listener listener = new Listener();
         mealCostBox = new JTextField(15);
         outputBox = new JTextField(10);
         outputBox.setEditable(false);
@@ -42,7 +43,8 @@ public class Chap17tipCalculator extends JFrame {
         add(button1);
         add(button2);
         add(button3);
-        mealCostBox.addActionListener(new Listener());
+        mealCostBox.addActionListener(listener);
+        button1.addActionListener(listener);
     } // end createContents method
 //******************************************************************************
 
