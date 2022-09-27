@@ -9,11 +9,12 @@ package chap17tipcalculator;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.text.*;
 
 public class Chap17tipCalculator extends JFrame {
 
     private static final int WIDTH = 325;
-    private static final int HEIGHT = 100;
+    private static final int HEIGHT = 150;
     private JTextField mealCostBox; // holds user's meal cost
     private JTextField outputBox; // displays tip amount calculation
     private JButton button1 = new JButton("10% tip");
@@ -33,14 +34,13 @@ public class Chap17tipCalculator extends JFrame {
 
     private void createContents() {  // Create components and add them to window
         JLabel mealCostPrompt = new JLabel("How much did the meal cost?");
-
         Listener listener = new Listener();
         mealCostBox = new JTextField(10);
-        outputBox = new JTextField(5);
-        outputBox.setEditable(false);
         button1.setBackground(Color.YELLOW);
         button2.setBackground(Color.MAGENTA);
         button3.setBackground(Color.CYAN);
+        outputBox = new JTextField(25);
+        outputBox.setEditable(false);
         add(mealCostPrompt);
         add(mealCostBox);
         add(outputBox);
@@ -57,7 +57,9 @@ public class Chap17tipCalculator extends JFrame {
     private class Listener implements ActionListener {//InnerClass eventHandling
 
         public void actionPerformed(ActionEvent e) {
-            double input, output, total = 0, tip; // tip amount
+            NumberFormat money = NumberFormat.getCurrencyInstance();
+            double input, total = 0, tip = 0;
+            String tipOnly = null, totalOnly = null;
             if (e.getSource() == mealCostBox) {
                 JOptionPane.showMessageDialog(null, "Click one of the buttons");
             } else {
@@ -69,27 +71,36 @@ public class Chap17tipCalculator extends JFrame {
                             contentPane.setBackground(Color.LIGHT_GRAY);
                         } // end if condition
                         tip = input * .1;
-                        total = input + tip;
+                        tipOnly = money.format(tip);
+                        total = tip + input;
+                        totalOnly = money.format(total);
                     } // end if condition
-                    outputBox.setText(Double.toString(total));
+                    outputBox.setText(" Tip: " + tipOnly
+                            + " Total: " + totalOnly);
                     if (e.getSource() == button2) {
                         Container contentPane = getContentPane();
                         if (e.getSource() == button2) {
                             contentPane.setBackground(Color.PINK);
                         } // end if condition
                         tip = input * .15;
-                        total = input + tip;
+                        tipOnly = money.format(tip);
+                        total = tip + input;
+                        totalOnly = money.format(total);
                     } // end if condition
-                    outputBox.setText(Double.toString(total));
+                    outputBox.setText(" Tip: " + tipOnly
+                            + " Total: " + totalOnly);
                     if (e.getSource() == button3) {
                         Container contentPane = getContentPane();
                         if (e.getSource() == button3) {
                             contentPane.setBackground(Color.ORANGE);
                         } // end if condition
                         tip = input * .2;
-                        total = input + tip;
+                        tipOnly = money.format(tip);
+                        total = tip + input;
+                        totalOnly = money.format(total);
                     } // end if condition
-                    outputBox.setText(Double.toString(total));
+                    outputBox.setText(" Tip: " + tipOnly
+                            + " Total: " + totalOnly);
                 } catch (NumberFormatException nfe) {
                     input = -1;
                 } // end try/catch   
